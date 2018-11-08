@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  sonar:
+    image: sonarqube:latest
+    ports:
+      - 9001:9000
+    depends_on:
+      - mysql
+    environment:
+      - SONAR_JDBC_URL=jdbc:mysql://mysql:3306/sonarqube?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+      - SONAR_DB_USERNAME=sonarqube
+      - SONAR_DB_PASSWORD=sonarqube
+
+  mysql:
+    image: mysql:latest
+    hostname: mysql
+    expose:
+      - 3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysecretpassword
+      - MYSQL_USER=sonarqube
+      - MYSQL_PASSWORD=sonarqube
+      - MYSQL_DATABASE=sonarqube
+
+  portainer:
+    image: portainer/portainer
+    ports:
+      - "9000:9000"
+    command: -H unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+volumes:
+  portainer_data:
