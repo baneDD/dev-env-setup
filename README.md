@@ -1,5 +1,7 @@
 # DEVELOPMENT ENVIRONMENT SETUP
 
+This is a collection of development tools I use to accomplish different tasks. The setup requires Docker installed on the host machine and then running the docker-compose configuration included here. There are some minor configuration details that will need to be modified to suit as well as some differences based on the OS used on the host machine.
+
 Tools available:
 
 * [Portainer](#portainer)
@@ -9,11 +11,9 @@ Tools available:
 
 ### PORTAINER
 
-_To be filled in with Portainer explained_
+[Portainer](https://portainer.io/) is a web-based GUI management tool for Docker. It's dead-simple to install and run and allows for easy management of containers, images, volumes and networks. When run via the docker-compose file included in this project, it can be accessed via [port 480 on localhost](http://localhost:480). More documentation on using Portainer can be found [here](https://portainer.readthedocs.io/en/stable/)
 
-Portainer Setup
-
-_Windows 10_
+_Windows 10 Portainer Notes_
 
 Open a PowerShell console as Administrator and execute the following two commands:
 ```
