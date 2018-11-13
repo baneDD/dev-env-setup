@@ -21,12 +21,12 @@ If you're running on Windows, add the following to your PowerShell profile scrip
 
 ### SONARQUBE
 
-_To be filled in with Sonarqube explained_
+[SonarQube](https://www.sonarqube.org/) is an indispensable development tool that highlights issues with the code such as bugs, security vulnerabilities or insufficient test coverage. It allows you to set a quality gate and to monitor code over time for accumulation of technical debt. Using SonarQube as part of your development workflow will help you systematically improve your code quality.
 
 ### POSTGRES
 
-_To be filled in with Postgres explained_
+Postgres is a powerful, open-source object-relational database system. It's used here as the backing store for SonarQube.
 
 ### HOUND
 
-_To be filled in with Hound explained_
+Hound is a simple and lightweight tool used to index your repositories allowing you to search for anything in the code. Particularly useful on large projects or when working with unfamiliar codebases.
