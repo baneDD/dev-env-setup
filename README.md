@@ -17,8 +17,7 @@ Tools available:
 
 _Windows 10 Portainer Notes_
 
-If you're running on Windows, add the following to your PowerShell profile script:
-``` $Env:COMPOSE_CONVERT_WINDOWS_PATHS=1
+If you're running on Windows, add the following to your PowerShell profile script: `$Env:COMPOSE_CONVERT_WINDOWS_PATHS=1`
 
 ### SONARQUBE
 
