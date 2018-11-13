@@ -3,8 +3,9 @@ version: "2"
 services:
   sonarqube:
     image: sonarqube
+    container_name: sonarqube
     ports:
-      - "9000:9000"
+      - 9000:9000
     networks:
       - sonarnet
     environment:
@@ -17,6 +18,7 @@ services:
 
   db:
     image: postgres
+    container_name: postgres
     networks:
       - sonarnet
     environment:
@@ -32,7 +34,7 @@ services:
     image: portainer/portainer:latest
     restart: always
     ports:
-      - '480:9000'
+      - 480:9000
     volumes:
       # Remove the /var/run/docker.sock volume if running on Windows
       - /var/run/docker.sock:/var/run/docker.sock
