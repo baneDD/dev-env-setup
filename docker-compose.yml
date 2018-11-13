@@ -40,6 +40,16 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
 
+  hound:
+    container_name: hound
+    image: etsy/hound:latest
+    restart: always
+    ports:
+      - 580:6080
+    volumes:
+      - hound_data:/data
+
+
 networks:
   sonarnet:
     driver: bridge
@@ -52,3 +62,5 @@ volumes:
   postgresql:
   postgresql_data:
   portainer_data:
+  hound_data:
+  
