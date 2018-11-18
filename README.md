@@ -18,24 +18,19 @@ Tools available:
 
 _Windows 10 Portainer Notes_
 
-Open a PowerShell console as Administrator and execute the following two commands:
-```
-$ netsh interface portproxy add v4tov4 listenaddress=10.0.75.1 listenport=2375 connectaddress=127.0.0.1 connectport=2375
-$ netsh advfirewall firewall add rule name="docker management" dir=in action=allow protocol=TCP localport=2375
-```
-The first line connects 10.0.75.1:2375 to the daemon socket on 127.0.0.1:2375, and the second line adds a pass-through on the firewall for the port 2375. Note that for this to work you need to enable "Expose daemon on tcp://localhost:2375 without TLS" from Docker settings under the "General" tab. According to Docker documentation, "Exposing daemon on TCP without TLS helps legacy clients connect to the daemon. It also makes yourself vulnerable to remote code execution attacts. Use with caution."
+If you're running on Windows, add the following to your PowerShell profile script: `$Env:COMPOSE_CONVERT_WINDOWS_PATHS=1`
 
 ### SONARQUBE
 
-_To be filled in with Sonarqube explained_
+[SonarQube](https://www.sonarqube.org/) is an indispensable development tool that highlights issues with the code such as bugs, security vulnerabilities or insufficient test coverage. It allows you to set a quality gate and to monitor code over time for accumulation of technical debt. Using SonarQube as part of your development workflow will help you systematically improve your code quality.
 
 ### POSTGRES
 
-_To be filled in with Postgres explained_
+Postgres is a powerful, open-source object-relational database system. It's used here as the backing store for SonarQube.
 
 ### HOUND
 
-_To be filled in with Hound explained_
+Hound is a simple and lightweight tool used to index your repositories allowing you to search for anything in the code. Particularly useful on large projects or when working with unfamiliar codebases.
 
 ### NGINX
 
@@ -45,3 +40,4 @@ _To be filled in with Hound explained_
     - Sonarqube = http://localhost/sonarqube
 
 Note that localhost above can be replaced with another name assuming that it's added to the hostfile. Additionally, it the tools are hosted on a separate server, they can be served under a different domain name with a single IP address.
+
