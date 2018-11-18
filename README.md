@@ -10,6 +10,7 @@ Tools available:
 * [Sonarqube](#sonarqube)
 * [Postgres](#postgres)
 * [Hound](#hound)
+* [Nginx](#nginx)
 
 ### PORTAINER
 
@@ -35,3 +36,12 @@ _To be filled in with Postgres explained_
 ### HOUND
 
 _To be filled in with Hound explained_
+
+### NGINX
+
+[NGINX](https://nginx.org/en/) is an application that can be used as an HTTP and reverse proxy server, a mail proxy server or a TCP/UDP proxy server. Here are we using it as a reverse proxy to allow all of our development tools to appear as they are served by a single application server. We can access the applications as:
+    - Portainer - http://localhost/portainer
+    - Hound - http://localhost/hound
+    - Sonarqube = http://localhost/sonarqube
+
+Note that localhost above can be replaced with another name assuming that it's added to the hostfile. Additionally, it the tools are hosted on a separate server, they can be served under a different domain name with a single IP address.
