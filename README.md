@@ -35,6 +35,7 @@ Hound is a simple and lightweight tool used to index your repositories allowing 
 ### NGINX
 
 [NGINX](https://nginx.org/en/) is an application that can be used as an HTTP and reverse proxy server, a mail proxy server or a TCP/UDP proxy server. Here are we using it as a reverse proxy to allow all of our development tools to appear as they are served by a single application server. We can access the applications as:
+
     - Portainer - http://localhost/portainer
     - Hound - http://localhost/hound
     - Sonarqube = http://localhost/sonarqube
