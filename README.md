@@ -24,6 +24,18 @@ If you're running on Windows, add the following to your PowerShell profile scrip
 
 [SonarQube](https://www.sonarqube.org/) is an indispensable development tool that highlights issues with the code such as bugs, security vulnerabilities or insufficient test coverage. It allows you to set a quality gate and to monitor code over time for accumulation of technical debt. Using SonarQube as part of your development workflow will help you systematically improve your code quality.
 
+You will need to install sonar-scanner to analyze code and can do so using home brew:
+
+```brew install sonar-scanner```
+
+__NOTE__: The process of installing the Sonar Scanner tool is different on different platforms. Please consult [Sonarqube Documentation](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner) for more on scanner installation and use.
+
+Finally, if you're using the Nginx setup I have here, you will need to edit the sonar-scanner.properties file (run sonar-scanner tool to see where it's installed) and add the following line:
+
+```sonar.host.url=http://localhost/sonarqube```
+
+This will tell the scanner to upload the analysis results there rather than to default localhost:9000 location.
+
 ### POSTGRES
 
 Postgres is a powerful, open-source object-relational database system. It's used here as the backing store for SonarQube.
