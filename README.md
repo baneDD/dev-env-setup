@@ -11,6 +11,7 @@ Tools available:
 * [Postgres](#postgres)
 * [Hound](#hound)
 * [Nginx](#nginx)
+* [Jenkins](#jenkins)
 
 ### PORTAINER
 
@@ -54,3 +55,6 @@ Hound is a simple and lightweight tool used to index your repositories allowing 
 
 Note that localhost above can be replaced with another name assuming that it's added to the hostfile. Additionally, it the tools are hosted on a separate server, they can be served under a different domain name with a single IP address.
 
+### Jenkins
+
+[Jenkins](https://jenkins.io/) is an open source automation server. Jenkins provides hundreds of plugins to support building, deploying and automating any project.
