@@ -1,2 +1,5 @@
 /hound
 /sonarqube_extensions
+/home
+/jenkins_data
+/custom-mysql.cnf

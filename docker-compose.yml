@@ -10,6 +10,19 @@ services:
       - ./sonarqube_conf:/opt/sonarqube/conf
       - ./sonarqube_extensions:/opt/sonarqube/extensions
 
+  jenkins:
+    container_name: jenkins
+    image: jenkinsci/blueocean
+    user: root
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+      - "50000:50000"
+    volumes:
+      - ./jenkins_data:/var/jenkins_home
+      - ./home:/home
+      - /var/run/docker.sock:/var/run/docker.sock    
+
   db:
     container_name: postgres
     image: postgres
