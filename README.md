@@ -45,6 +45,18 @@ Postgres is a powerful, open-source object-relational database system. It's used
 
 Hound is a simple and lightweight tool used to index your repositories allowing you to search for anything in the code. Particularly useful on large projects or when working with unfamiliar codebases.
 
+NOTE: Because Hound is running in a Docker container, to analyze any local folders, you must mount them in the Docker container as volumes. For example, if you had some source code in `/Projects/sample-project`, you would add the following volume to volumes under `hound` in `docker-compose.yml`:
+`Projects/sample-project:sources/sample-project`
+
+Now in your Hound config you could simply add the following config:
+```
+    "sample project": {
+      "url": "file:///sources/sample-project"
+    }
+```
+
+What we have done here is we have in essence remapped `/Projects/sample-project` to `/sources/sample-project` in our Docker container
+
 ### NGINX
 
 [NGINX](https://nginx.org/en/) is an application that can be used as an HTTP and reverse proxy server, a mail proxy server or a TCP/UDP proxy server. Here are we using it as a reverse proxy to allow all of our development tools to appear as they are served by a single application server. We can access the applications as:
